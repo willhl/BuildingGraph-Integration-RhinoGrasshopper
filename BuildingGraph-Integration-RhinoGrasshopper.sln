@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29411.108
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingGraph.Integration.RhinoGrasshopper", "BuildingGraph.Integration.RhinoGrasshopper\BuildingGraph.Integration.RhinoGrasshopper.csproj", "{3DB3BD80-74D4-4523-A201-C3CE20D855E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingGraph.Client.GraphQL", "BuildingGraph-Client\BuildingGraph.Client.GraphQL\BuildingGraph.Client.GraphQL.csproj", "{6217D742-11DC-40D1-8125-D2B98414BE03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingGraph.Client.Neo4j", "BuildingGraph-Client\BuildingGraph.Client.Neo4j\BuildingGraph.Client.Neo4j.csproj", "{400E1964-B716-4EA4-B21E-15C1F2135888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingGraph.Client.Core", "BuildingGraph-Client\BuildingGraph.Client.Core\BuildingGraph.Client.Core.csproj", "{79E4ED3B-5594-466D-89F9-18D2F00A547E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Debug|x64.ActiveCfg = Debug|x64
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Debug|x64.Build.0 = Debug|x64
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Release|x64.ActiveCfg = Release|Any CPU
+		{3DB3BD80-74D4-4523-A201-C3CE20D855E8}.Release|x64.Build.0 = Release|Any CPU
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Debug|x64.ActiveCfg = Debug|x64
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Debug|x64.Build.0 = Debug|x64
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Release|x64.ActiveCfg = Release|x64
+		{6217D742-11DC-40D1-8125-D2B98414BE03}.Release|x64.Build.0 = Release|x64
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Debug|x64.ActiveCfg = Debug|x64
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Debug|x64.Build.0 = Debug|x64
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Release|x64.ActiveCfg = Release|x64
+		{400E1964-B716-4EA4-B21E-15C1F2135888}.Release|x64.Build.0 = Release|x64
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Debug|x64.Build.0 = Debug|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Release|x64.ActiveCfg = Release|Any CPU
+		{79E4ED3B-5594-466D-89F9-18D2F00A547E}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47448791-7B7F-40FC-AE0C-728CB589894E}
+	EndGlobalSection
+EndGlobal
