@@ -15,7 +15,7 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
     {
         public override Guid ComponentGuid => new Guid("A53FD7C8-7424-4629-B5EB-68CADD2AC89C");
         Neo4jDatabase _neo4jDB;
-
+        bool _wasCommitted = false;
         public Neo4jConnect() : base("Connect DB", "Connect", "Connects to Neo4j database", "Neo4j", "Nodes")
         {
         }
@@ -26,6 +26,7 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
             pManager.AddTextParameter("_neo4jPort", "Port", "DB Port", GH_ParamAccess.item, "6987");
             pManager.AddTextParameter("_neo4jUserName", "Host", "DB Host name or IP", GH_ParamAccess.item);
             pManager.AddTextParameter("_neo4jPassword", "Host", "DB Host name or IP", GH_ParamAccess.item);
+            pManager.AddBooleanParameter("_Commit", "Commit", "Commit changes to database", GH_ParamAccess.item);
         }
 
         protected override void RegisterOutputParams(GH_OutputParamManager pManager)
@@ -36,6 +37,14 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
 
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
+            bool commitChanges = false;
+            if (_neo4jDB != null && !_wasCommitted && dataAccess.GetData<bool>("_Commit", ref commitChanges))
+            {
+                _wasCommitted = !commitChanges;
+                _neo4jDB.Value.Commit();
+                AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Changes committed");
+                return;
+            }
 
             string host = string.Empty;
             string userName = string.Empty;
@@ -74,46 +83,6 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
             dataAccess.SetData("_neo4jDriver", _neo4jDB);
         }
 
-    }
-
-
-    public class CreateNode : GH_Component
-    {
-        public CreateNode() : base("Create Node", "Create", "Creates a neo4j db node", "Neo4j", "Nodes")
-        {
-        }
-
-        public override Guid ComponentGuid => new Guid("5B4A7EA1-CD31-43F9-861B-B207016677BA");
-
-        protected override void RegisterInputParams(GH_InputParamManager pManager)
-        {
-            pManager.AddGenericParameter("_neo4jDriver", "DB", "Neo4j Database connection", GH_ParamAccess.item);
-            pManager.AddGenericParameter("_parameters", "Perams", "Neo4j Database connection", GH_ParamAccess.list);
-
-        }
-
-
-        protected override void RegisterOutputParams(GH_OutputParamManager pManager)
-        {
-
-            pManager.AddGenericParameter("_neo4jPendingNode", "DB", "Neo4j Database connection", GH_ParamAccess.item);
-
-        }
-
-        protected override void SolveInstance(IGH_DataAccess dataAccess)
-        {
-            Neo4jDatabase neo4jDB = null;
-
-            if (!dataAccess.GetData("_neo4jDriver", ref neo4jDB))
-            {
-                AddRuntimeMessage(GH_RuntimeMessageLevel.Error, "DB connection required");
-                return;
-            }
-
-
-           //neo4jDB.Value.Push();
-
-        }
     }
 
 }

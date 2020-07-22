@@ -84,12 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Neo4jNode.cs" />
-    <Compile Include="Components\BuildingGraphRelateComponent.cs" />
-    <Compile Include="Components\BuildingGraphPushComponent.cs" />
-    <Compile Include="Components\BuildingGraphQueryComponent.cs" />
-    <Compile Include="Classes\Neo4jDatabase.cs" />
-    <Compile Include="Components\Neo4jConnect.cs" />
+    <Compile Include="Classes\Neo4j\Neo4jNode.cs" />
+    <Compile Include="Components\GraphQL\BuildingGraphRelateComponent.cs" />
+    <Compile Include="Components\GraphQL\BuildingGraphPushComponent.cs" />
+    <Compile Include="Components\GraphQL\BuildingGraphQueryComponent.cs" />
+    <Compile Include="Classes\Neo4j\Neo4jDatabase.cs" />
+    <Compile Include="Components\Neo4j\CreateNode.cs" />
+    <Compile Include="Components\Neo4j\Neo4jConnect.cs" />
     <Compile Include="Kernal\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

@@ -12,7 +12,7 @@ namespace BuildingGraph.Integration.RhinoGrasshopper.Kernal
         {
             get
             {
-                return "Neo4j AEC Grasshopper";
+                return "Building Graph";
             }
         }
         public override Bitmap Icon
@@ -37,7 +37,7 @@ namespace BuildingGraph.Integration.RhinoGrasshopper.Kernal
             get
             {
                 //Return a short string describing the purpose of this GHA library.
-                return "Noe4j Grasshopper nodes";
+                return "Building Graph/Noe4j Grasshopper nodes";
             }
         }
         public override Guid Id

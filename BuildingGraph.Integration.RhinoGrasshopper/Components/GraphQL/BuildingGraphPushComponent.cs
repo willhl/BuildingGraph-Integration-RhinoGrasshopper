@@ -73,7 +73,7 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
 
             _client.Commit();
 
-            DA.SetData("Result Node ID", result.TempId);
+            DA.SetData("Result Node ID", result.Id);
             DA.IncrementIteration();
             
             this.Phase = GH_SolutionPhase.Computed;
