@@ -37,14 +37,18 @@ namespace BuildingGraph.Integration.RhinoGrasshopper
 
         protected override void SolveInstance(IGH_DataAccess dataAccess)
         {
+     
+
             bool commitChanges = false;
-            if (_neo4jDB != null && !_wasCommitted && dataAccess.GetData<bool>("_Commit", ref commitChanges))
-            {
+            dataAccess.GetData<bool>("_Commit", ref commitChanges);
+            if (_neo4jDB != null && !_wasCommitted && commitChanges)
+            {              
+                _neo4jDB.Value.CommitAsync().RunSynchronously();
                 _wasCommitted = !commitChanges;
-                _neo4jDB.Value.Commit();
                 AddRuntimeMessage(GH_RuntimeMessageLevel.Remark, "Changes committed");
                 return;
             }
+
 
             string host = string.Empty;
             string userName = string.Empty;
